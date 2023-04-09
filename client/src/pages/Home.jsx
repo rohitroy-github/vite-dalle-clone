@@ -20,34 +20,34 @@ const Home = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState(null);
 
-  const fetchPosts = async () => {
-    setLoading(true);
+  // const fetchPosts = async () => {
+  //   setLoading(true);
 
-    try {
-      const response = await fetch(
-        "https://dalle-arbb.onrender.com/api/v1/post",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  //   try {
+  //     const response = await fetch(
+  //       "https://dalle-arbb.onrender.com/api/v1/post",
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
 
-      if (response.ok) {
-        const result = await response.json();
-        setAllPosts(result.data.reverse());
-      }
-    } catch (err) {
-      alert(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (response.ok) {
+  //       const result = await response.json();
+  //       setAllPosts(result.data.reverse());
+  //     }
+  //   } catch (err) {
+  //     alert(err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   fetchPosts();
+  // }, []);
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
