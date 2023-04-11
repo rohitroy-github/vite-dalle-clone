@@ -73,10 +73,10 @@ const CreatePost = () => {
         );
 
         await response.json();
-        alert("Success");
+        // alert("Success");
         navigate("/");
-      } catch (err) {
-        alert(err);
+      } catch (error) {
+        alert(error);
       } finally {
         setLoading(false);
       }
@@ -88,7 +88,9 @@ const CreatePost = () => {
   return (
     <section className="max-w-7xl mx-auto">
       <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
+        <h1 className="font-extrabold text-[#222328] text-[32px]">
+          Create Using DALL-E
+        </h1>
         <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
           Generate an imaginative image through DALL-E AI and share it with the
           community
@@ -98,16 +100,16 @@ const CreatePost = () => {
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
           <FormField
-            labelName="Your Name"
+            labelName="What's your name ?"
             type="text"
             name="name"
-            placeholder="Ex., john doe"
+            placeholder="Ex. Rohit Roy"
             value={form.name}
             handleChange={handleChange}
           />
 
           <FormField
-            labelName="Prompt"
+            labelName="Give me a prompt ?"
             type="text"
             name="prompt"
             placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
@@ -159,7 +161,7 @@ const CreatePost = () => {
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {loading ? "Sharing..." : "Share with the Community"}
+            {loading ? "Sharing..." : "Share with our community :)"}
           </button>
         </div>
       </form>
