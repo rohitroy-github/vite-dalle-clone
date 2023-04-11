@@ -6,6 +6,8 @@ import connectDB from "./mogodb/connect.js";
 import postRoutes from "./routes/postRoutes.js";
 import dalleRoutes from "./routes/dalleRoutes.js";
 
+const PORT = process.env.PORT;
+
 dotenv.config();
 
 const app = express();
@@ -24,9 +26,11 @@ app.get("/", async (req, res) => {
 const startServer = async () => {
   try {
     connectDB(process.env.MONGODB_URL);
-    app.listen(8080, () => console.log("Server started on port 8080"));
+    app.listen(PORT, () =>
+      console.log(`Server is running at : http://localhost:${PORT} :)`)
+    );
   } catch (error) {
-    console.log(error);
+    console.log("Server connection failed : ", error);
   }
 };
 

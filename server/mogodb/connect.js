@@ -6,10 +6,10 @@ const connectDB = (url) => {
   mongoose.set("strictQuery", true);
   mongoose
     .connect(url)
-    .then(() => console.log("MongoDB connected !"))
-    .catch((err) => {
-      console.error("Failed to connect with MongoDB !");
-      console.error(err);
+    .then(() => console.log("Database(MongoDB) connection established :)"))
+    .catch((error) => {
+      console.error("Database(MongoDB) connection failed :(");
+      console.error(error);
     });
 };
 
