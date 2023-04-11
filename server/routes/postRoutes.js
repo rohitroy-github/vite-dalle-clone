@@ -8,12 +8,7 @@ dotenv.config();
 
 const router = express.Router();
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-
+// forFetchingAllUploadedPosts
 router.route("/").get(async (req, res) => {
   try {
     const posts = await Post.find({});
@@ -21,11 +16,18 @@ router.route("/").get(async (req, res) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Fetching posts failed, please try again",
+      message: "Coudn't fetch posts right now. Please try again later !",
     });
   }
 });
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// forUploadingPosts/Images
 router.route("/").post(async (req, res) => {
   try {
     const {name, prompt, photo} = req.body;
@@ -41,7 +43,7 @@ router.route("/").post(async (req, res) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Unable to create a post, please try again",
+      message: "Unable to make a post right now. Please try again later !",
     });
   }
 });
