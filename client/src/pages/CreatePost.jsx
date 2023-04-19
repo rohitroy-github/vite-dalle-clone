@@ -32,6 +32,8 @@ const CreatePost = () => {
         // const response = await fetch("http://localhost:8080/api/v1/dalle", {
         const response = await fetch(
           "https://vite-dalle-clone-server.vercel.app/api/v1/dalle",
+          // "http://localhost:8080/api/v1/dalle",
+
           {
             method: "POST",
             headers: {
@@ -63,6 +65,8 @@ const CreatePost = () => {
       try {
         const response = await fetch(
           "https://vite-dalle-clone-server.vercel.app/api/v1/post",
+          // "http://localhost:8080/api/v1/post",
+
           {
             method: "POST",
             headers: {

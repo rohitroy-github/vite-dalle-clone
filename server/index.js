@@ -19,7 +19,7 @@ app.use("/api/v1/dalle", dalleRoutes);
 
 app.get("/", async (req, res) => {
   res.status(200).json({
-    message: "Hello from DALL.E!",
+    message: "This is the server for Rohit Roy's DALL-E clone project !",
   });
 });
 

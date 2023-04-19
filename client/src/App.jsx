@@ -6,7 +6,7 @@ import {Home, CreatePost} from "./pages";
 
 const App = () => (
   <BrowserRouter>
-    <header className="sm:px-8 xs:px-8 lg:px-0 py-8 w-full flex justify-between items-center bg-white border-b border-b-[#e6ebf4] max-w-7xl mx-auto">
+    <header className="sm:px-8 px-4 xs:px-8 lg:px-0 py-8 w-full flex justify-between items-center bg-white border-b border-b-[#e6ebf4] max-w-7xl mx-auto">
       <Link to="/">
         <img src={logo} alt="logo" className="w-28 object-contain" />
       </Link>
